@@ -1,5 +1,9 @@
 import { HomeContainer } from './styles'
 
 export function Home() {
-  return <HomeContainer></HomeContainer>
+  return (
+    <HomeContainer>
+      <main className="main-container"></main>
+    </HomeContainer>
+  )
 }
