@@ -1,6 +1,12 @@
 import { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyle = createGlobalStyle`
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
     :root {
         font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
         font-size: 14px;
@@ -15,17 +21,13 @@ export const GlobalStyle = createGlobalStyle`
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         -webkit-text-size-adjust: 100%;
-
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
     }
 
     :focus {
         outline: 0;
         box-shadow: none;
     }
-    
+
     html {
         font-size: 62.5%;
     }
