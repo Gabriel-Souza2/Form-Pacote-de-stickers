@@ -6,12 +6,17 @@ export const GlobalStyle = createGlobalStyle`
         padding: 0;
         box-sizing: border-box;
     }
+
+    html {
+        font-size: 62.5%;
+    }
     
     :root {
         font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
-        font-size: 14px;
         line-height: 24px;
         font-weight: 400;
+
+
 
         color: ${({ theme }) => theme['pine-green']};
         background-color: ${({ theme }) => theme.white};
@@ -28,7 +33,5 @@ export const GlobalStyle = createGlobalStyle`
         box-shadow: none;
     }
 
-    html {
-        font-size: 62.5%;
-    }
+
 `
