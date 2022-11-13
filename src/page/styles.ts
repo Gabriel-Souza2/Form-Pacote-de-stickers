@@ -8,7 +8,7 @@ export const HomeContainer = styled.div`
   justify-content: center;
   align-items: center;
 
-  .main-container {
+  .content-container {
     width: 100%;
     max-width: 56rem;
     background-color: ${({ theme }) => theme.white};
