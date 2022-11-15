@@ -75,6 +75,7 @@ export const FormStickers = styled.form`
         position: absolute;
         opacity: 0;
         cursor: pointer;
+        z-index: 1;
       }
 
       .checkmark {
@@ -91,7 +92,7 @@ export const FormStickers = styled.form`
       .check {
         display: none;
         margin-top: 3px;
-        width: 8px;
+        width: 6px;
         height: 14px;
         transform: rotate(45deg);
         border-right: 3px solid ${({ theme }) => theme.white};
