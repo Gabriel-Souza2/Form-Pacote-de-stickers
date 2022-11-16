@@ -24,7 +24,7 @@ export const CheckboxesContaier = styled(FieldContainer)`
     .checkmark {
       width: 2.4rem;
       height: 2.4rem;
-      background-color: ${({ theme }) => theme['dark-blue-grey']};
+      background-color: ${({ theme }) => theme['dark-grey-blue']};
       border-radius: 3px;
       cursor: pointer;
 
