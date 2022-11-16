@@ -1,13 +1,13 @@
 import { CheckboxesContaier } from './styles'
 
-export type checkboxType = 'react' | 'vue' | 'angular'
+export type checkboxesType = 'react' | 'vue' | 'angular'
 
 interface CheckboxesProps {
-  onCheckedCheckboxes: (checkbox: checkboxType) => void
+  onCheckedCheckboxes: (checkbox: checkboxesType) => void
 }
 
 export function Checkboxes({ onCheckedCheckboxes }: CheckboxesProps) {
-  function handleChecked(type: checkboxType) {
+  function handleChecked(type: checkboxesType) {
     onCheckedCheckboxes(type)
   }
 
