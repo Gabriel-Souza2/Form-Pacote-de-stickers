@@ -47,4 +47,7 @@ export const HomeContainer = styled.div`
 
 export const FormStickers = styled.form`
   margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
 `

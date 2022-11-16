@@ -32,6 +32,4 @@ export const GlobalStyle = createGlobalStyle`
         outline: 0;
         box-shadow: none;
     }
-
-
 `

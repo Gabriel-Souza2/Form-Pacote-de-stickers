@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { AmountStickers } from '../components/AmountStickers'
 import { Checkboxes, checkboxesType } from '../components/Checkboxes'
 import { FormStickers, HomeContainer } from './styles'
 
@@ -35,6 +36,7 @@ export function Home() {
         <main>
           <FormStickers>
             <Checkboxes onCheckedCheckboxes={handleCheckedBoxes} />
+            <AmountStickers />
           </FormStickers>
         </main>
       </div>

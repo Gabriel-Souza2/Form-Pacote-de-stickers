@@ -1,17 +1,7 @@
 import styled from 'styled-components'
+import { FieldContainer } from '../../styles/commonStyles'
 
-export const CheckboxesContaier = styled.fieldset`
-  border: none;
-  padding: 0 3.2rem;
-
-  legend {
-    font-size: 1.8rem;
-    font-weight: bold;
-    color: ${({ theme }) => theme['pine-green']};
-    margin-bottom: 1.5rem;
-    cursor: pointer;
-  }
-
+export const CheckboxesContaier = styled(FieldContainer)`
   .checkbox-wrapper {
     display: flex;
     align-items: center;
