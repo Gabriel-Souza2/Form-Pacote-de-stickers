@@ -1,16 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1668564353073" clover="3.2.0">
-  <project timestamp="1668564353073" name="All files">
-    <metrics statements="128" coveredstatements="126" conditionals="12" coveredconditionals="12" methods="15" coveredmethods="11" elements="155" coveredelements="149" complexity="0" loc="128" ncloc="128" packages="2" files="4" classes="4"/>
+<coverage generated="1668565083278" clover="3.2.0">
+  <project timestamp="1668565083279" name="All files">
+    <metrics statements="139" coveredstatements="137" conditionals="12" coveredconditionals="12" methods="15" coveredmethods="11" elements="166" coveredelements="160" complexity="0" loc="139" ncloc="139" packages="2" files="4" classes="4"/>
     <package name="AmountStickers">
-      <metrics statements="8" coveredstatements="8" conditionals="3" coveredconditionals="3" methods="3" coveredmethods="3"/>
+      <metrics statements="19" coveredstatements="19" conditionals="3" coveredconditionals="3" methods="3" coveredmethods="3"/>
       <file name="index.tsx" path="/home/gabriel/Documentos/react/desafios/form-pacote-de-stickers/src/components/AmountStickers/index.tsx">
-        <metrics statements="5" coveredstatements="5" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
+        <metrics statements="16" coveredstatements="16" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="cond" truecount="2" falsecount="0"/>
         <line num="4" count="1" type="stmt"/>
         <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
       </file>
       <file name="styles.ts" path="/home/gabriel/Documentos/react/desafios/form-pacote-de-stickers/src/components/AmountStickers/styles.ts">
         <metrics statements="3" coveredstatements="3" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
