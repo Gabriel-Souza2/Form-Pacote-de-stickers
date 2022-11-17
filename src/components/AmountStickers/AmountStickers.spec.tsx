@@ -1,4 +1,4 @@
-import { render } from '@testing-library/react'
+import { render, fireEvent } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { AmountStickers } from '.'
 
@@ -18,6 +18,7 @@ describe('Amount stickers components', () => {
     expect(btnAdd).toBeInTheDocument()
     expect(amountInput).toBeInTheDocument()
   })
+
   it('Should add one more stickers', async () => {
     const { getByTestId, getByDisplayValue } = render(<AmountStickers />)
 
@@ -26,5 +27,15 @@ describe('Amount stickers components', () => {
     await userEvent.click(getByTestId('btn-up'))
 
     expect(amountInput.value).toBe('1')
+  })
+
+  it('Should set the value write in the input', async () => {
+    const { getByTestId } = render(<AmountStickers />)
+
+    const amountInput = getByTestId('amount-input') as HTMLInputElement
+
+    fireEvent.change(amountInput, { target: { value: 30 } })
+
+    expect(amountInput.value).toBe('30')
   })
 })
