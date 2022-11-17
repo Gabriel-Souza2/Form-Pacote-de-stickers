@@ -16,7 +16,7 @@ export function AmountStickers() {
       <button data-testid="btn-down">
         <span className="sub"></span>
       </button>
-      <input className="amount" type="number" value={amountStickers} />
+      <input className="amount-input" type="number" value={amountStickers} />
       <button data-testid="btn-up" onClick={handleAddOneMoreSticker}>
         <span className="add"></span>
       </button>

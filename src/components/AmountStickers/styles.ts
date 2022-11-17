@@ -53,7 +53,7 @@ export const AmountStickersContainer = styled(FieldContainer)`
     transform: translate(-50%, -50%);
   }
 
-  .amount {
+  .amount-input {
     width: 6rem;
     height: 4.2rem;
 
@@ -65,5 +65,13 @@ export const AmountStickersContainer = styled(FieldContainer)`
     border-radius: 5px;
     border: 1px solid ${({ theme }) => theme['dark-grey-blue']};
     background-color: ${({ theme }) => theme['light-sky-blue']};
+    -webkit-appearance: textfield;
+    -moz-appearance: textfield;
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
   }
 `
