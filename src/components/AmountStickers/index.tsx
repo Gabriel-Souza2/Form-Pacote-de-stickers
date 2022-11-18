@@ -3,7 +3,9 @@ import { AmountStickersContainer } from './styles'
 
 export function AmountStickers() {
   const [amountStickers, setAmountStickers] = useState(0)
-  function handleValueFromInput(value: string) {
+  function handleValueFromInput(e: React.ChangeEvent<HTMLInputElement>) {
+    const value = e.target.value
+    e.target.value = ''
     setAmountStickers(Number(value))
   }
   function handleAddOneMoreSticker(event: React.MouseEvent<HTMLElement>) {
@@ -32,7 +34,7 @@ export function AmountStickers() {
         data-testid="amount-input"
         type="number"
         value={amountStickers}
-        onChange={(e) => handleValueFromInput(e.target.value)}
+        onChange={(e) => handleValueFromInput(e)}
       />
       <button data-testid="btn-up" onClick={handleAddOneMoreSticker}>
         <span className="add"></span>
