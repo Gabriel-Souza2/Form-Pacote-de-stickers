@@ -29,7 +29,7 @@ describe('Amount stickers components', () => {
     expect(amountInput.value).toBe('1')
   })
 
-  it('Should set the value write in the input', async () => {
+  it('Should set the value write in input for user', async () => {
     const { getByTestId } = render(<AmountStickers />)
 
     const amountInput = getByTestId('amount-input') as HTMLInputElement
@@ -37,5 +37,15 @@ describe('Amount stickers components', () => {
     fireEvent.change(amountInput, { target: { value: 30 } })
 
     expect(amountInput.value).toBe('30')
+  })
+
+  it('Should not decrement input value if input value is 0', async () => {
+    const { getByTestId } = render(<AmountStickers />)
+
+    const amountInput = getByTestId('amount-input') as HTMLInputElement
+
+    await userEvent.click(getByTestId('btn-down'))
+
+    expect(amountInput.value).toBe('0')
   })
 })
