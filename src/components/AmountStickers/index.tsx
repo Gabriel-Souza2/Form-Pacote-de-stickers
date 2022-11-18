@@ -24,8 +24,8 @@ export function AmountStickers() {
   return (
     <AmountStickersContainer>
       <legend>Quantas Stickers de cada?</legend>
-      <button data-testid="btn-down">
-        <span className="sub" onClick={handleSubOneSticker}></span>
+      <button data-testid="btn-down" onClick={handleSubOneSticker}>
+        <span className="sub"></span>
       </button>
       <input
         className="amount-input"

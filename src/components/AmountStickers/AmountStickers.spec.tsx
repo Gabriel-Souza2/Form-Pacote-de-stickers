@@ -48,4 +48,16 @@ describe('Amount stickers components', () => {
 
     expect(amountInput.value).toBe('0')
   })
+
+  it('Should decrement input value if input value is more than 1', async () => {
+    const { getByTestId } = render(<AmountStickers />)
+
+    const amountInput = getByTestId('amount-input') as HTMLInputElement
+
+    fireEvent.change(amountInput, { target: { value: 2 } })
+
+    await userEvent.click(getByTestId('btn-down'))
+
+    expect(amountInput.value).toBe('1')
+  })
 })
