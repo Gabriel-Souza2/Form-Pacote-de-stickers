@@ -12,11 +12,20 @@ export function AmountStickers() {
       return (value += 1)
     })
   }
+
+  function handleSubOneSticker(event: React.MouseEvent<HTMLElement>) {
+    event.preventDefault()
+    if (amountStickers > 0) {
+      setAmountStickers((value) => {
+        return (value -= 1)
+      })
+    }
+  }
   return (
     <AmountStickersContainer>
       <legend>Quantas Stickers de cada?</legend>
       <button data-testid="btn-down">
-        <span className="sub"></span>
+        <span className="sub" onClick={handleSubOneSticker}></span>
       </button>
       <input
         className="amount-input"
