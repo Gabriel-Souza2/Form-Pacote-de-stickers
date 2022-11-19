@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { FieldContainer } from '../styles/commonStyles'
 
 export const HomeContainer = styled.div`
   width: 100vw;
@@ -50,4 +51,16 @@ export const FormStickers = styled.form`
   display: flex;
   flex-direction: column;
   gap: 3.2rem;
+`
+export const NoteContainer = styled(FieldContainer)`
+  textarea {
+    resize: none;
+    width: 100%;
+    height: 14rem;
+    border: 1px solid ${({ theme }) => theme['dark-grey-blue']};
+    border-radius: 5px;
+    background-color: ${({ theme }) => theme['light-sky-blue']};
+    color: ${({ theme }) => theme['pine-green']};
+    padding: 1.6rem;
+  }
 `

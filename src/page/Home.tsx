@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { AmountStickers } from '../components/AmountStickers'
 import { Checkboxes, checkboxesType } from '../components/Checkboxes'
-import { FormStickers, HomeContainer } from './styles'
+import { FormStickers, HomeContainer, NoteContainer } from './styles'
 
 export function Home() {
   const [checkedBoxes, setCheckedBoxes] = useState<checkboxesType[]>([])
@@ -37,6 +37,10 @@ export function Home() {
           <FormStickers>
             <Checkboxes onCheckedCheckboxes={handleCheckedBoxes} />
             <AmountStickers />
+            <NoteContainer>
+              <legend>Observações:</legend>
+              <textarea name="note" id="note"></textarea>
+            </NoteContainer>
           </FormStickers>
         </main>
       </div>
