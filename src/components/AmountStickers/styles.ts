@@ -18,8 +18,12 @@ export const AmountStickersContainer = styled(FieldContainer)`
     align-items: center;
     justify-content: center;
 
-    &:hover {
+    &:not(:disabled):hover {
       background-color: ${({ theme }) => theme['pine-green']};
+    }
+
+    &:disabled {
+      opacity: 0.2;
     }
   }
 

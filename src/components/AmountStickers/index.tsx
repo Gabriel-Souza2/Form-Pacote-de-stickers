@@ -23,10 +23,16 @@ export function AmountStickers() {
       })
     }
   }
+
+  const subButtonIsDisabled = amountStickers <= 0
   return (
     <AmountStickersContainer>
       <legend>Quantas Stickers de cada?</legend>
-      <button data-testid="btn-down" onClick={handleSubOneSticker}>
+      <button
+        data-testid="btn-down"
+        disabled={subButtonIsDisabled}
+        onClick={handleSubOneSticker}
+      >
         <span className="sub"></span>
       </button>
       <input
