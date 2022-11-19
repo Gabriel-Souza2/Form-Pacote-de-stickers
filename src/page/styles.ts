@@ -2,8 +2,7 @@ import styled from 'styled-components'
 import { FieldContainer } from '../styles/commonStyles'
 
 export const HomeContainer = styled.div`
-  width: 100vw;
-  height: 100vh;
+  height: 100%;
   background-color: ${({ theme }) => theme['rebecca-purple']};
   display: flex;
   justify-content: center;
@@ -47,7 +46,7 @@ export const HomeContainer = styled.div`
 `
 
 export const FormStickers = styled.form`
-  margin: 3rem 0;
+  margin-top: 3rem;
   display: flex;
   flex-direction: column;
   gap: 3.2rem;
@@ -62,5 +61,30 @@ export const NoteContainer = styled(FieldContainer)`
     background-color: ${({ theme }) => theme['light-sky-blue']};
     color: ${({ theme }) => theme['pine-green']};
     padding: 1.6rem;
+  }
+`
+
+export const FooterFormContainer = styled.footer`
+  width: 100%;
+  height: 10rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: ${({ theme }) => theme['light-sky-blue']};
+  padding: 3.2rem;
+
+  button {
+    padding: 7px 32px;
+    color: ${({ theme }) => theme.white};
+    font-size: 1.8rem;
+    font-weight: bold;
+    background-color: ${({ theme }) => theme['dark-grey-blue']};
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: ${({ theme }) => theme['pine-green']};
+    }
   }
 `
