@@ -60,4 +60,16 @@ describe('Amount stickers components', () => {
 
     expect(amountInput.value).toBe('1')
   })
+
+  it('Should disabled subtration button if input is 0', () => {
+    const { getByTestId } = render(<AmountStickers />)
+
+    const amountInput = getByTestId('amount-input') as HTMLInputElement
+
+    fireEvent.change(amountInput, { target: { value: 0 } })
+
+    const subButton = getByTestId('btn-down')
+
+    expect(subButton).toHaveAttribute('disabled')
+  })
 })
