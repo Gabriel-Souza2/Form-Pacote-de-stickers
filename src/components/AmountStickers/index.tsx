@@ -1,18 +1,27 @@
 import React, { useState } from 'react'
 import { AmountStickersContainer } from './styles'
 
-export function AmountStickers() {
+interface AmountStickeresProps {
+  onChange?: (value: number) => void
+}
+
+export function AmountStickers({ onChange = () => {} }: AmountStickeresProps) {
   const [amountStickers, setAmountStickers] = useState(0)
   function handleValueFromInput(e: React.ChangeEvent<HTMLInputElement>) {
     const value = e.target.value
     e.target.value = ''
     setAmountStickers(Number(value))
+
+    onChange(Number(value))
   }
+
   function handleAddOneMoreSticker(event: React.MouseEvent<HTMLElement>) {
     event.preventDefault()
     setAmountStickers((value) => {
       return (value += 1)
     })
+
+    onChange(amountStickers + 1)
   }
 
   function handleSubOneSticker(event: React.MouseEvent<HTMLElement>) {
@@ -22,6 +31,8 @@ export function AmountStickers() {
         return (value -= 1)
       })
     }
+
+    onChange(amountStickers - 1)
   }
 
   const subButtonIsDisabled = amountStickers <= 0

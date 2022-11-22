@@ -83,8 +83,12 @@ export const FooterFormContainer = styled.footer`
     border-radius: 8px;
     cursor: pointer;
 
-    &:hover {
+    &:not(:disabled):hover {
       background-color: ${({ theme }) => theme['pine-green']};
+    }
+
+    &:disabled {
+      opacity: 0.2;
     }
   }
 `

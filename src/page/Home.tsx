@@ -10,6 +10,8 @@ import {
 
 export function Home() {
   const [checkedBoxes, setCheckedBoxes] = useState<checkboxesType[]>([])
+  const [amountStickers, setAmountStickers] = useState<number>(0)
+
   function handleCheckedBoxes(type: checkboxesType) {
     const isAlreadyChecked = checkedBoxes.find(
       (checkedBoxe) => checkedBoxe === type,
@@ -24,6 +26,12 @@ export function Home() {
 
     setCheckedBoxes(newChekedBoxes)
   }
+
+  function handleChangeValueAmountStickers(value: number) {
+    setAmountStickers(value)
+  }
+
+  const submitIsdisabled = amountStickers === 0 || checkedBoxes.length === 0
 
   return (
     <HomeContainer>
@@ -41,14 +49,16 @@ export function Home() {
         <main>
           <FormStickers>
             <Checkboxes onCheckedCheckboxes={handleCheckedBoxes} />
-            <AmountStickers />
+            <AmountStickers onChange={handleChangeValueAmountStickers} />
             <NoteContainer>
               <legend>Observações:</legend>
               <textarea name="note" id="note"></textarea>
             </NoteContainer>
 
             <FooterFormContainer>
-              <button type="submit">Enviar</button>
+              <button type="submit" disabled={submitIsdisabled}>
+                Enviar
+              </button>
             </FooterFormContainer>
           </FormStickers>
         </main>
