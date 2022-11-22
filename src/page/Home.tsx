@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import React, { useState } from 'react'
 import { AmountStickers } from '../components/AmountStickers'
 import { Checkboxes, checkboxesType } from '../components/Checkboxes'
 import {
@@ -6,11 +6,13 @@ import {
   HomeContainer,
   NoteContainer,
   FooterFormContainer,
+  SubmitButton,
 } from './styles'
 
 export function Home() {
   const [checkedBoxes, setCheckedBoxes] = useState<checkboxesType[]>([])
   const [amountStickers, setAmountStickers] = useState<number>(0)
+  const [sending, setSending] = useState<boolean>(false)
 
   function handleCheckedBoxes(type: checkboxesType) {
     const isAlreadyChecked = checkedBoxes.find(
@@ -31,7 +33,17 @@ export function Home() {
     setAmountStickers(value)
   }
 
-  const submitIsdisabled = amountStickers === 0 || checkedBoxes.length === 0
+  function handleSubmit(e: React.MouseEvent<HTMLElement>) {
+    e.preventDefault()
+    setSending(true)
+
+    setTimeout(() => {
+      setSending(false)
+    }, 3600)
+  }
+
+  const submitIsdisabled =
+    amountStickers === 0 || checkedBoxes.length === 0 || sending
 
   return (
     <HomeContainer>
@@ -56,9 +68,15 @@ export function Home() {
             </NoteContainer>
 
             <FooterFormContainer>
-              <button type="submit" disabled={submitIsdisabled}>
-                Enviar
-              </button>
+              <SubmitButton
+                type="submit"
+                disabled={submitIsdisabled}
+                sending={sending}
+                onClick={(e) => handleSubmit(e)}
+              >
+                <span className="submit-text">Enviar</span>
+                <span className="spinner"></span>
+              </SubmitButton>
             </FooterFormContainer>
           </FormStickers>
         </main>

@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 import { FieldContainer } from '../styles/commonStyles'
 
 export const HomeContainer = styled.div`
@@ -64,6 +64,13 @@ export const NoteContainer = styled(FieldContainer)`
   }
 `
 
+const rotate = keyframes`
+  to {
+    transform: rotate(360deg);
+
+  }
+`
+
 export const FooterFormContainer = styled.footer`
   width: 100%;
   height: 10rem;
@@ -72,23 +79,45 @@ export const FooterFormContainer = styled.footer`
   align-items: center;
   background-color: ${({ theme }) => theme['light-sky-blue']};
   padding: 3.2rem;
+`
+interface SubmitButtonProps {
+  sending: boolean
+}
 
-  button {
-    padding: 7px 32px;
+export const SubmitButton = styled.button<SubmitButtonProps>`
+  width: 13.3rem;
+  height: 3.7rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: ${({ theme, sending }) =>
+    sending ? theme['pine-green'] : theme['dark-grey-blue']};
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+
+  &:not(:disabled):hover {
+    background-color: ${({ theme }) => theme['pine-green']};
+  }
+
+  &:disabled {
+    opacity: ${({ sending }) => (sending ? 1 : 0.2)};
+  }
+
+  .submit-text {
+    display: ${({ sending }) => (!sending ? 'block' : 'none')};
     color: ${({ theme }) => theme.white};
     font-size: 1.8rem;
     font-weight: bold;
-    background-color: ${({ theme }) => theme['dark-grey-blue']};
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
+  }
 
-    &:not(:disabled):hover {
-      background-color: ${({ theme }) => theme['pine-green']};
-    }
-
-    &:disabled {
-      opacity: 0.2;
-    }
+  .spinner {
+    width: 2rem;
+    height: 2rem;
+    display: ${({ sending }) => (sending ? 'block' : 'none')};
+    border: 4px solid ${({ theme }) => theme['dark-grey-blue']};
+    border-left-color: ${({ theme }) => theme.white};
+    border-radius: 50%;
+    animation: ${rotate} 1.5s linear infinite;
   }
 `
