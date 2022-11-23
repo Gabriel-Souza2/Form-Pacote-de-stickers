@@ -8,4 +8,5 @@ export const defaultTheme = {
   'dark-grey-blue': '#2F3676',
   'pine-green': '#071723',
   'light-blue-grey': '#C5CFD6',
+  green: '#00C57C',
 }

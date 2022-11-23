@@ -71,14 +71,30 @@ const rotate = keyframes`
   }
 `
 
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+`
+
 export const FooterFormContainer = styled.footer`
   width: 100%;
   height: 10rem;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
   background-color: ${({ theme }) => theme['light-sky-blue']};
   padding: 3.2rem;
+
+  .submit-form-sucess {
+    font-size: 1.8rem;
+    color: ${({ theme }) => theme.green};
+    font-weight: bold;
+    animation: ${fadeIn} 0.5s ease;
+  }
 `
 interface SubmitButtonProps {
   sending: boolean

@@ -13,6 +13,7 @@ export function Home() {
   const [checkedBoxes, setCheckedBoxes] = useState<checkboxesType[]>([])
   const [amountStickers, setAmountStickers] = useState<number>(0)
   const [sending, setSending] = useState<boolean>(false)
+  const [formSent, setFormSent] = useState<boolean>(false)
 
   function handleCheckedBoxes(type: checkboxesType) {
     const isAlreadyChecked = checkedBoxes.find(
@@ -36,9 +37,11 @@ export function Home() {
   function handleSubmit(e: React.MouseEvent<HTMLElement>) {
     e.preventDefault()
     setSending(true)
+    setFormSent(false)
 
     setTimeout(() => {
       setSending(false)
+      setFormSent(true)
     }, 3600)
   }
 
@@ -68,6 +71,14 @@ export function Home() {
             </NoteContainer>
 
             <FooterFormContainer>
+              {formSent ? (
+                <p className="submit-form-sucess">
+                  Formulario Enviado com Sucesso!
+                </p>
+              ) : (
+                <p></p>
+              )}
+
               <SubmitButton
                 type="submit"
                 disabled={submitIsdisabled}
