@@ -42,7 +42,7 @@ export function Home() {
     setTimeout(() => {
       setSending(false)
       setFormSent(true)
-    }, 3600)
+    }, 1000)
   }
 
   const submitIsdisabled =
@@ -84,6 +84,7 @@ export function Home() {
                 disabled={submitIsdisabled}
                 sending={sending}
                 onClick={(e) => handleSubmit(e)}
+                data-testid="btn-submit"
               >
                 <span className="submit-text">Enviar</span>
                 <span className="spinner"></span>
