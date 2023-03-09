@@ -200,7 +200,7 @@ Error generating stack: `+o.message+`
     overflow: hidden;
 
     header {
-      background-image: url('/img/background-header.png');
+      background-image: url("./img/background-header.png");
       width: 100%;
       height: 18.5rem;
       padding: 23px 31px;
